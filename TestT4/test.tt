@@ -43,20 +43,20 @@ string modelName=dr[0].ToString().Replace(" ", "");
 string path=ModelDirectory+$"\\{modelName}.cs";
 
 StringBuilder model=new StringBuilder();
-model.Append("namespace TestT4.Models\n{\npublic class ");
+model.Append("namespace TestT4.Models\n{\n   public class ");
 model.Append(modelName);
-model.Append(" { \n");
+model.Append("\n   { \n");
 
 SqlCommand propCommand = new SqlCommand($"SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{dr[0]}' ORDER BY ORDINAL_POSITION", con);
     SqlDataReader propName = propCommand.ExecuteReader();
     while (propName.Read())
     {
         SqlDbType type = (SqlDbType)Enum.Parse(typeof(SqlDbType), propName[1].ToString(), true);
-        model.Append("public "+GetType(type)+" "+propName[0]+" {get;set;}\n");
+        model.Append("      public "+GetType(type)+" "+propName[0]+" {get;set;}\n");
       
     }
 
-    model.Append(" \n}\n\n}");
+    model.Append(" \n   }\n\n}");
 CreateModel( path,  model.ToString());
 
 

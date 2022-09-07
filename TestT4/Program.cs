@@ -100,3 +100,6 @@ string GetType(SqlDbType type)
             break;
     }
 }
+
+var azzz=Path.Combine("zahid", "mamedov");
+Console.WriteLine("");

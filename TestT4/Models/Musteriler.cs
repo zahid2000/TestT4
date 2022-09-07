@@ -1,6 +1,6 @@
 namespace TestT4.Models
 {
-   public class Customers
+   public class Musteriler
    { 
       public string CustomerID { get; set; }
       public string CompanyName { get; set; }

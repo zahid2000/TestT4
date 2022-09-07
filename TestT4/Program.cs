@@ -41,6 +41,7 @@ while (dr.Read())
         SqlDbType type = (SqlDbType)Enum.Parse(typeof(SqlDbType), dr1[1].ToString(), true);
         Console.WriteLine(dr1[0] + "  --  " + GetType(type));
     }
+    dr1.Close();
 }
 
 dr.Close();
@@ -101,5 +102,4 @@ string GetType(SqlDbType type)
     }
 }
 
-var azzz=Path.Combine("zahid", "mamedov");
-Console.WriteLine("");
+

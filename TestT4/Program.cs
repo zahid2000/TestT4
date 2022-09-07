@@ -90,7 +90,7 @@ string GetType(SqlDbType type)
         case SqlDbType.Image:
         case SqlDbType.Timestamp:
         case SqlDbType.VarBinary:
-            return "byte";
+            return "byte[]";
 
         case SqlDbType.Bit:
             return "bool";
